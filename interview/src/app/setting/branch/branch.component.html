@@ -1,0 +1,24 @@
+<div class="title-container" fxLayout="row" fxLayoutAlign="space-between center">
+    <span class="title">{{data.title}}</span>
+    <span class="material-icons icons" (click)="toClose()">close</span>
+</div>
+
+<form [formGroup]="branchForm" fxLayout="column" fxLayoutGap="1rem" style="margin-top:-.5em">
+
+    <div fxLayout="row" fxFlex>
+        <span class="font" fxFlex="30">Surname</span>
+        <input class="input-form" fxFlex="70" type="text" autocomplete="off" formControlName="branch" />
+    </div>
+
+    <div fxLayout="row" fxFlex>
+        <span class="font" fxFlex="30">Assign to</span>
+        <mat-select class="select-form" fxFlex="70" formControlName="department">
+            <mat-option *ngFor="let dep of department" [value]="dep.id">{{dep.department}}</mat-option>
+        </mat-select>
+    </div>
+
+</form>
+
+<div class="button-container" fxLayoutAlign="center">
+    <button class="comfirm-button" (click)="submit()">Confirm</button>
+</div>

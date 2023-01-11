@@ -1,0 +1,114 @@
+::ng-deep.table {
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+}
+
+::ng-deep.input {
+    line-height: 1.5rem;
+    border-radius: 5px;
+    padding: 0 .5rem;
+    color: gray;
+    border: 1px solid azure;
+}
+
+::ng-deep.input-table {
+    line-height: 1.5rem;
+    border-radius: 5px;
+    padding: 0 .5rem;
+    color: gray;
+    border: 1px solid silver;
+    width: 1rem;
+    text-align: center;
+}
+
+::ng-deep.input-table:focus{
+    outline: none;
+    border: 1px solid gray;
+    color: darkslategray;
+}
+
+::ng-deep.input:focus {
+    outline: none;
+}
+
+::ng-deep.title-sweet {
+    font-size: 20px !important;
+    color: var(--dark-color) !important;
+    padding: 0 1em !important;
+}
+
+::ng-deep.cancel-sweet:focus-visible,
+::ng-deep.close-sweet:focus-visible,
+::ng-deep.confirm-sweet:focus-visible {
+    outline: none !important;
+}
+
+::ng-deep.swal2-shown.swal2-height-auto{
+    padding-right: 0px !important;
+}
+
+::ng-deep.confirm-sweet {
+    width: 5.5rem !important;
+    color: white !important;
+    font-size: 12px !important;
+    background-color: #49447c !important;
+    border-radius: 5px !important;
+    border: 1px solid var(--light-gray-color) !important;
+    padding: 0.4em 0 !important;
+    cursor: pointer;
+}
+
+::ng-deep.cancel-sweet {
+    width: 5.5rem !important;
+    color: white !important;
+    font-size: 12px !important;
+    background-color: #717272 !important;
+    border-radius: 5px !important;
+    border: 1px solid var(--light-gray-color) !important;
+    padding: 0.4em 0 !important;
+    cursor: pointer;
+}
+
+::ng-deep.popup-sweet {
+    width: 20em !important;
+    padding: 0 0 0.8em !important;
+}
+
+::ng-deep.close-sweet {
+    width: 5.5rem !important;
+    color: white !important;
+    font-size: 12px !important;
+    background-color: #717272 !important;
+    border-radius: 5px !important;
+    border: 1px solid var(--light-gray-color) !important;
+    padding: 0.4em 0 !important;
+    cursor: pointer;
+}
+
+::ng-deep.html-sweet {
+    font-size: 14px !important;
+    margin: 0.5em 1.6em 0.3em !important;
+    color: var(--dark-color) !important;
+
+}
+
+::ng-deep.icon-sweet {
+    width: 3em !important;
+    height: 3em !important;
+    margin: 2em auto 0.8em !important;
+}
+
+::ng-deep.icon-sweet .swal2-icon-content {
+    font-size: 2.1em !important;
+}
+
+::ng-deep.action-sweet {
+    gap: .5rem !important;
+    margin: 0 auto 0.5em !important;
+}
+
+::ng-deep.cdk-global-scrollblock {
+    overflow-y: hidden
+}

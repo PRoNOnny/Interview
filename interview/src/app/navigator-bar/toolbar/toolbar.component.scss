@@ -1,0 +1,46 @@
+.navigator-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3rem;
+    border-bottom: 1px solid black;
+    background: dimgrey;
+    vertical-align: middle;
+    // line-height: 3rem;
+    font-size: .8rem;
+}
+
+.option-bar {
+    color: white;
+    cursor: pointer;
+    line-height: 3rem;
+    width: 4rem;
+}
+
+.option-bar:hover {
+    font-weight: 600;
+}
+
+.title {
+    padding-left: 1rem;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+.option {
+    display: flex;
+    max-width: 21.5rem;
+    padding-right: .5rem;
+}
+
+.date {
+    color: white;
+    padding-right: .5rem;
+    line-height: 2rem;
+    margin-top: 0.5rem;
+    width: 6rem;
+    height: 2rem;
+    border-right: 1px solid white;
+}

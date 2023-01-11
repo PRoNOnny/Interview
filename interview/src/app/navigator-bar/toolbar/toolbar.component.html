@@ -1,0 +1,10 @@
+<div class="navigator-bar" fxLayout="row" fxLayoutAlign="space-between center">
+    <span class="title">Mookie The Dude</span>
+    <div fxLayoutGap=".8vw" class="option">
+        <span class="date">{{newDate()}}</span>
+        <span class="option-bar" style="padding-left: .5rem;" (click)="toMainPage()">Schedule</span>
+        <span class="option-bar" (click)="toMember()">Member</span>
+        <span class="option-bar" (click)="toSetting()">Congifuration</span>
+        <span class="material-icons option-bar" style="width: 3rem; text-align: end;">settings </span>
+    </div>
+</div>

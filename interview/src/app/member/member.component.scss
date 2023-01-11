@@ -1,0 +1,103 @@
+.container {
+    width: 94%;
+    padding: 5rem 3% 1rem;
+    height: 85%;
+    overflow: hidden;
+}
+
+.top-container {
+    width: 100%;
+    height: 3rem;
+    padding: 0 1rem;
+    background: silver;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+}
+
+.title {
+    font-size: 18px;
+    color: slategrey;
+}
+
+.member-content {
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    height: 39vw;
+    width: 100%;
+    background: ghostwhite;
+    overflow-y: auto;
+    box-shadow: 0 3px 1px -2px #0003, 0 2px 2px #00000024, 0 1px 5px #0000001f;
+}
+
+.cell-icons {
+    font-size: 17px;
+}
+
+.cell-icons:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.icons:hover {
+    cursor: pointer;
+    color: black;
+}
+
+.mat-column-number {
+    text-align: center;
+    width: 4vw;
+}
+
+.mat-column-name {
+    width: 16vw;
+    padding-left: 4vw;
+}
+
+.mat-column-department {
+    width: 15vw;
+}
+
+.mat-column-branch {
+    width: 15vw;
+}
+
+.cell-padding-08 {
+    padding-left: .8rem;
+}
+
+.cell-padding-1 {
+    padding-left: 1rem;
+}
+
+.cell-padding-13 {
+    padding-left: 1.3rem;
+}
+
+.mat-column-option {
+    right: 0px;
+    width: 5rem;
+    text-align: end;
+}
+
+tr.mat-header-row {
+    height: 40px;
+    font-size: 16px;
+}
+
+tr.mat-row {
+    color: gray;
+    height: 42px;
+}
+
+tr.mat-row:hover {
+    background-color: silver;
+    color: dimgray !important;
+}
+
+.mat-cell {
+    color: inherit;
+    font-size: 12px;
+    line-height: 0px;
+    border: 0px;
+}

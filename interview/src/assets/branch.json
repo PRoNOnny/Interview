@@ -1,0 +1,22 @@
+[
+    {
+        "id": "458547",
+        "branch": "Alpha",
+        "departmentId":"123057"
+    },
+    {
+        "id": "379452",
+        "branch": "Bata",
+        "departmentId":"123057"
+    },
+    {
+        "id": "145387",
+        "branch": "Delta",
+        "departmentId":"123057"
+    },
+    {
+        "id": "558721",
+        "branch": "Gamma",
+        "departmentId":"123057"
+    }
+]

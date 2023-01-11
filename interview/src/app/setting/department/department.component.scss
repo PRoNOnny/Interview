@@ -1,0 +1,66 @@
+.title-container {
+    border-bottom: 1px solid gray;
+    transform: translate(-24px, -24px);
+    width: calc(100% + 48px);
+    height: 2.3rem;
+    color: dimgrey;
+    padding: 0.3rem 0.3rem 0 1rem;
+}
+
+.button-container {
+    padding-top: 1rem;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.font {
+    color: dimgray;
+    line-height: 26px;
+}
+
+.icons:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.comfirm-button {
+    width: 5.5rem !important;
+    color: white !important;
+    font-size: 12px !important;
+    background-color: #49447c !important;
+    border-radius: 5px !important;
+    border: 1px solid var(--light-gray-color) !important;
+    padding: 0.4em 0 !important;
+    cursor: pointer;
+}
+
+.input-form {
+    line-height: 1.4rem;
+    font-size: 15px;
+    padding: 0 0.5rem;
+    color: gray;
+    border: none;
+    border-bottom: 1px solid slategray
+}
+
+.input-form:focus {
+    outline: none;
+    color: darkslategray;
+    border-bottom: 1px solid darkslategrey;
+}
+
+.select-form {
+    border-bottom: 1px solid slategray
+}
+
+::ng-deep.select-form .mat-select-trigger {
+    padding: 0 0.5rem;
+    height: 1.6rem !important;
+}
+
+::ng-deep.select-form .mat-select-value {
+    color: gray;
+}

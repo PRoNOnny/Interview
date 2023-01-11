@@ -1,0 +1,25 @@
+<div class="title-container" fxLayout="row" fxLayoutAlign="space-between center">
+    <span class="title">{{data.title}}</span>
+    <span class="material-icons icons" (click)="toClose()">close</span>
+</div>
+
+<form [formGroup]="departmentForm" fxLayout="column" fxLayoutGap="1rem" style="margin-top:-.5em">
+    
+    <div fxLayout="row" fxFlex>
+        <span class="font" fxFlex="30">Department</span>
+        <input class="input-form" fxFlex="70" type="text" autocomplete="off" formControlName="department" />
+    </div>
+
+    <div fxLayout="row" fxFlex>
+        <span class="font" fxFlex="30">Type</span>
+        <mat-select class="select-form" fxFlex="70" formControlName="type">
+            <mat-option [value]="'single'">Single</mat-option>
+            <mat-option [value]="'multi'">Multi</mat-option>
+        </mat-select>
+    </div>
+
+</form>
+
+<div class="button-container" fxLayoutAlign="center">
+    <button class="comfirm-button" (click)="submit()">Confirm</button>
+</div>

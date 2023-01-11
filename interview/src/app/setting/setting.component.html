@@ -1,0 +1,83 @@
+<div class="container" fxLayout="columns" fxLayoutGap="3vw">
+
+    <div fxFlex="50">
+        <div class="top-container" fxLayoutAlign="space-between center">
+            <span class="title">Department</span>
+            <input class="input" type="text"  [(ngModel)]="search.dep" autocomplete="off">
+        </div>
+
+        <div class="position-content">
+            <table mat-table [dataSource]="department | search : search.dep: ['id','department','type']" class="table">
+
+                <ng-container matColumnDef="number" sticky>
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="department">
+                    <th mat-header-cell *matHeaderCellDef> Department </th>
+                    <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="type">
+                    <th mat-header-cell *matHeaderCellDef> Type </th>
+                    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="option" stickyEnd>
+                    <th mat-header-cell *matHeaderCellDef>
+                        <span class="material-icons icons" (click)="addDepartment()">add</span>
+                    </th>
+                    <td mat-cell *matCellDef="let element; let i = index">
+                        <span class="material-icons-outlined cell-icons"
+                            (click)="editDepartment(element , i)">edit_note</span>
+                        <span class="material-icons-outlined cell-icons"
+                            (click)="deleteDepartment(i)">delete_forever</span>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsDepartment; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsDepartment;"></tr>
+            </table>
+        </div>
+    </div>
+    <div fxFlex="50">
+        <div class="top-container" fxLayoutAlign="space-between center">
+            <span class="title">Branch</span>
+            <input class="input" type="text" [(ngModel)]="search.br" autocomplete="off">
+        </div>
+        <div class="branch-content">
+            <table mat-table [dataSource]="branch | search : search.br: ['id','branch','department']" class="table">
+
+                <ng-container matColumnDef="number" sticky>
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="branch">
+                    <th mat-header-cell *matHeaderCellDef> Branch </th>
+                    <td mat-cell *matCellDef="let element"> {{element.branch}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="department">
+                    <th mat-header-cell *matHeaderCellDef> Department </th>
+                    <td mat-cell *matCellDef="let element"> {{element.department}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="option" stickyEnd>
+                    <th mat-header-cell *matHeaderCellDef>
+                        <span class="material-icons icons" (click)="addBranch()">add</span>
+                    </th>
+                    <td mat-cell *matCellDef="let element; let i = index">
+                        <span class="material-icons-outlined cell-icons"
+                            (click)="editBranch(element, i)">edit_note</span>
+                        <span class="material-icons-outlined cell-icons" (click)="deleteBranch(i)">delete_forever</span>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsBranch; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsBranch;"></tr>
+            </table>
+        </div>
+    </div>
+</div>
