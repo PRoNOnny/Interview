@@ -1,233 +1,26 @@
-<div class="container">
-    <div class="top-container">
-        <span class="title">Schedule</span>
-    </div>
-    <div class="content">
-        <mat-accordion>
-            <mat-expansion-panel [expanded]="expand" (closed)="expand = !expand" hideToggle>
-                <mat-expansion-panel-header expandedHeight="60px" collapsedHeight="60px">
-                    <mat-panel-title class="title"> Setting </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="setting" fxLayout="column" fxLayoutGap=".5vw">
-                    <div fxFlex="85" fxLayout="row" fxLayoutGap="1vw">
-                        <div fxFlex="40" class="right-container">
-                            <ng-container *ngFor="let mem of memberDisplay; let i = index">
-                                <mat-expansion-panel [expanded]="i == clickMem" hideToggle (click)="clickMem = i">
-                                    <mat-expansion-panel-header expandedHeight="42px" collapsedHeight="42px">
-                                        <mat-panel-title class="title">{{
-                                            mem[i]?.department
-                                            }}</mat-panel-title>
-                                    </mat-expansion-panel-header>
-                                    <div fxLayout="column" class="mini-table" cdkDropListGroup>
-                                        <div fxFlex fxLayout="row" class="drop-box-header">
-                                            <mat-checkbox style="width: 3rem; text-align: center" color="primary"
-                                                checked="true" (change)="memberCheckAll($event, i)" disableRipple>
-                                            </mat-checkbox>
-                                            <span fxFlex="15"
-                                                style="text-align: center; line-height: initial">Sequence</span>
-                                            <span fxFlex="25"
-                                                style="text-align: center; line-height: initial">Number</span>
-                                            <span fxFlex="30"
-                                                style="padding-left: 2vw; line-height: initial">Name</span>
-                                            <span fxFlex style="line-height: initial">Surname</span>
-                                        </div>
-                                        <div cdkDropList fxLayout="column" class="drop-container"
-                                            [cdkDropListData]="mem" (cdkDropListDropped)="drop($event)">
-                                            <div fxFlex fxLayout="row" class="drop-box"
-                                                *ngFor="let member of mem; let j = index" cdkDrag>
-                                                <mat-checkbox style="width: 3rem; text-align: center"
-                                                    [checked]="member.tick" (change)="memberCheck($event, i,j)"
-                                                    color="primary" disableRipple>
-                                                </mat-checkbox>
-                                                <span fxFlex="15" style="text-align: center; line-height: initial">{{ j
-                                                    + 1 }}</span>
-                                                <span fxFlex="25" style="text-align: center; line-height: initial">{{
-                                                    member.number ? member.number : '-' }}</span>
-                                                <span fxFlex="30" style="padding-left: 2vw; line-height: initial">{{
-                                                    member.name? member.name : '-' }}</span>
-                                                <span fxFlex style="line-height: initial">{{
-                                                    member.surname ? member.surname : '-'
-                                                    }}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </mat-expansion-panel>
-                            </ng-container>
-                        </div>
-
-                        <div fxFlex="60" class="left-container">
-                            <ng-container *ngFor="let branch of branch; let i = index">
-                                <mat-expansion-panel [expanded]="i == clickBr" (click)="clickBr = i" hideToggle>
-                                    <mat-expansion-panel-header expandedHeight="42px" collapsedHeight="42px">
-                                        <mat-panel-title class="title">{{
-                                            branch[i]?.department
-                                            }}</mat-panel-title>
-                                    </mat-expansion-panel-header>
-                                    <div fxLayout="column" class="mini-table" cdkDropListGroup>
-                                        <div fxFlex fxLayout="row" class="drop-box-header">
-                                            <mat-checkbox style="width: 3rem; text-align: center" color="primary"
-                                                checked="true" (change)="branchCheckAll($event, i)" disableRipple>
-                                            </mat-checkbox>
-                                            <span fxFlex="12"
-                                                style="text-align: center; line-height: initial">Sequence</span>
-                                            <span fxFlex="15"
-                                                style="text-align: center; line-height: initial">Branch</span>
-                                            <span fxFlex="22"
-                                                style="text-align: center; line-height: initial">Number</span>
-                                            <span fxFlex="25"
-                                                style="padding-left: 2vw; line-height: initial">Name</span>
-                                            <span fxFlex style="line-height: initial">Surname</span>
-                                        </div>
-                                        <div cdkDropList fxLayout="column" class="drop-container"
-                                            [cdkDropListData]="branch" (cdkDropListDropped)="drop($event)">
-                                            <div fxFlex fxLayout="row" class="drop-box"
-                                                *ngFor="let br of branch; let j = index" cdkDrag>
-                                                <mat-checkbox style="width: 3rem; text-align: center"
-                                                    [checked]="br.tick" (change)="memberCheck($event, i,j)"
-                                                    color="primary" disableRipple>
-                                                </mat-checkbox>
-                                                <span fxFlex="12" style="text-align: center; line-height: initial">{{ j
-                                                    + 1 }}</span>
-                                                <span fxFlex="15" style="text-align: center; line-height: initial">{{
-                                                    br.branch }}</span>
-                                                <div fxFlex="22" fxLayout="column" fxLayoutGap="10px"
-                                                    style="text-align: center; line-height: initial">
-                                                    <span fxFlex="50" *ngFor="let mem of br.member">{{
-                                                        mem.number ? mem.number : '-'
-                                                        }}</span>
-                                                </div>
-                                                <div fxFlex="25" fxLayout="column" fxLayoutGap="10px"
-                                                    style="padding-left: 2vw; line-height: initial">
-                                                    <span fxFlex="50" *ngFor="let mem of br.member">{{
-                                                        mem.name ? mem.name : '-'
-                                                        }}</span>
-                                                </div>
-                                                <div fxFlex fxLayout="column" style="line-height: initial"
-                                                    fxLayoutGap="10px">
-                                                    <span fxFlex="50" *ngFor="let mem of br.member">{{ mem.surname ?
-                                                        mem.surname : '-'}}
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </mat-expansion-panel>
-                            </ng-container>
-                        </div>
-                    </div>
-                    <div class="bottom-container" style="padding: 0px 16px;">
-                        <div fxLayoutAlign="start center" fxLayoutGap="1rem">
-                            <div fxLayout="row" fxLayoutAlign="start center">
-                                <span style="color: slategrey; padding-right: 5px; font-weight: 600;"> Select month/Year</span>
-                                <input matInput class="input" [matDatepicker]="dp" [formControl]="date">
-                                <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-                                <mat-datepicker #dp startView="multi-year" (monthSelected)="setMonthAndYear($event, dp)"
-                                    panelClass="example-month-picker">
-                                </mat-datepicker>
-                            </div>
-                            <div fxLayout="row" fxLayoutAlign="start center" *ngFor="let dep of department">
-                                <span style="color: slategrey; padding-right: 5px; font-weight: 600; text-overflow: ellipsis; overflow: hidden; max-width: 7rem; white-space: nowrap;">{{dep.department}}</span>
-                                <mat-form-field class="select">
-                                    <mat-select [(ngModel)]="startAt[dep.id]" (selectionChange)="selectChange(dep.id)">
-                                        <mat-option *ngFor="let date of datasource; let i = index" [value]="i">{{date.date}}</mat-option>
-                                    </mat-select>
-                                </mat-form-field>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </mat-expansion-panel>
-            <mat-expansion-panel [expanded]="!expand" (closed)="expand = !expand">
-                <mat-expansion-panel-header expandedHeight="60px" collapsedHeight="60px">
-                    <mat-panel-title class="title"> Table </mat-panel-title>
-                </mat-expansion-panel-header>
-                <div class="table-container">
-                    <table #Schedule mat-table [dataSource]="datasource" class="table" style="border-radius: 0.6vw">
-                        <ng-container matColumnDef="day" sticky>
-                            <th mat-header-cell *matHeaderCellDef>วัน เดือน ปี</th>
-                            <td mat-cell *matCellDef="let element; let i = index">
-                                <div fxLayout="row" fxLayoutAlign="center">
-                                    <span style="width: 6rem">{{ element.day }}</span>
-                                    <span>{{ element.date }}</span>
-                                </div>
-                            </td>
-                        </ng-container>
-
-                        <ng-container *ngFor="let department of department" matColumnDef="{{ department.id }}">
-                            <th mat-header-cell *matHeaderCellDef [style.width]="calculateWidth(department)"
-                                style="border-left: 1px solid gainsboro">
-                                {{ department.department }}
-                            </th>
-                            <td mat-cell *matCellDef="let element; let i = index"
-                                style="border-left: 1px solid gainsboro"
-                                (contextmenu)="menuOpen($event, department, i)">
-                                <div *ngIf="displayTable(element[department.id])" fxLayout="row" fxLayoutAlign="center">
-                                    <span fxFlex="40" style="text-align: start">{{ element[department.id]?.name }}
-                                        {{ element[department.id]?.surname }}</span>
-                                    <span fxFlex="10" style="text-align: center">{{
-                                        element[department.id]?.number
-                                        }}</span>
-                                </div>
-                                <div *ngIf="!displayTable(element[department.id])" fxLayout="row">
-                                    <div fxLayoutAlign="center" fxFlex="50"
-                                        *ngFor="let mem of element[department.id]?.member">
-                                        <span fxFlex="40" style="text-align: start">{{ mem.name }} {{ mem.surname
-                                            }}</span>
-                                        <span fxFlex="10" style="text-align: center">{{
-                                            mem.number
-                                            }}</span>
-                                    </div>
-                                </div>
-                            </td>
-                        </ng-container>
-
-                        <tr mat-header-row *matHeaderRowDef="displayedScheduleColumns; sticky: true"></tr>
-                        <tr mat-row *matRowDef="let row; let i = index; columns: displayedScheduleColumns"></tr>
-                    </table>
-                </div>
-                <div class="button-container" fxLayoutAlign="end">
-                    <button class="comfirm-button" (click)="getSchedule()">
-                        Schedule
-                    </button>
-                </div>
-            </mat-expansion-panel>
-        </mat-accordion>
+<div style="position: relative" fxLayoutAlign="center center"
+    style="width: 100vw; height: 100vh; background-color: silver;">
+    <div fxLayout="column" style="background-color: aliceblue; width: 40%; height: 40%; border-radius: 8px;">
+        <div fxFlex="40" fxLayoutAlign="center center">
+            <span class="title"> URL Shortener</span>
+        </div>
+        <div fxLayout="column" fxFlex="60">
+            <div fxFlex="40" fxLayoutAlign="center center">
+                <input required class="input-table" [(ngModel)]="longUrl"
+                style="width: 60%; text-align: start; line-height: 2rem; font-size: 1.2rem;" placeholder="url"
+                type="url" type="url">
+                <span class="material-icons-outlined copy-icons" style="margin-left: .5rem;" (click)="shortUrl()">send</span>
+            </div>
+            
+            <div *ngIf="value" fxFlex="60" fxLayoutAlign="center start" fxLayoutGap="5px">
+                <span style="line-height: 26px;">Your short-url is</span>
+                <input class="input" disabled [(ngModel)]="value">
+                <span [cdkCopyToClipboard]="value" class="material-icons copy-icons">content_copy</span>
+            </div>
+        </div>
     </div>
 </div>
 
-<div [matMenuTriggerFor]="tableMenu" [style.position]="'absolute'" [style.left.px]="contextMenuPosition.x"
-    [style.top.px]="contextMenuPosition.y"></div>
-
-<mat-menu #tableMenu [hasBackdrop]="false">
-
-    <ng-template matMenuContent let-items="item">
-        <div *ngIf="displayTable(items[0])" [style.width.px]="150"
-            style="padding: 5px 16px; font-size:13px; background: palevioletred; color: white;"
-            (click)="$event.stopPropagation();">
-            <span fxFlex="50">Number</span>
-            <span fxFlex="50">Name</span>
-        </div>
-        <div *ngIf="!displayTable(items[0])" [style.width.px]="280"
-            style="padding: 5px 16px; font-size:13px; background: palevioletred; color: white;"
-            (click)="$event.stopPropagation();">
-            <span fxFlex="25">Number</span>
-            <span fxFlex="25">Name</span>
-            <span fxFlex="25">Number</span>
-            <span fxFlex="25">Name</span>
-        </div>
-        <ng-container *ngFor="let item of items">
-            <div *ngIf="displayTable(item)" mat-menu-item fxLayout="row" [style.width.px]="150"
-                (click)="updateMemberTable(item)">
-                <span fxFlex="50">{{item.number}}</span>
-                <span fxFlex="50">{{item.name}}</span>
-            </div>
-            <div *ngIf="!displayTable(item)" mat-menu-item fxLayout="row" [style.width.px]="280"
-                (click)="updateMemberTable(item)">
-                <ng-container *ngFor="let mem of item.member">
-                    <span fxFlex="50">{{mem.number}}</span>
-                    <span fxFlex="50">{{mem.name}}</span>
-                </ng-container>
-            </div>
-        </ng-container>
-    </ng-template>
-</mat-menu>
+<div style="position: fixed; top: 0; right: 0">
+    <span class="material-icons icons" (click)="toSchedule()"> scheduler </span>
+</div>

@@ -18,8 +18,8 @@ export class ToolbarComponent implements OnInit {
     return moment().format('DD MMM YYYY')
   }
 
-  toMainPage(){
-    this.router.navigate(['/']);
+  toSchedule(){
+    this.router.navigate(['/schedule']);
   }
 
   toMember() {
@@ -28,5 +28,9 @@ export class ToolbarComponent implements OnInit {
 
   toSetting() {
     this.router.navigate(['/setting']);
+  }
+
+  toDashboard() {
+    this.router.navigate(['/dashboard']);
   }
 }

@@ -5,15 +5,15 @@ import { SettingComponent } from './setting/setting.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MemberComponent } from './member/member.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { LoginComponent } from './login/login.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 const routes: Routes = [
-  { path: 'schedule', component: DashboardComponent },
+  { path: 'schedule', component: ScheduleComponent },
   { path: 'member', component: MemberComponent },
   { path: 'setting', component: SettingComponent },
   { path: 'notfound', component: NotFoundComponent },
-  { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   { path: '**', redirectTo: 'notfound', pathMatch: 'full' },
 
 ];

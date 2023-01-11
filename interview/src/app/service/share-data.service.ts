@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, timeout } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import member from '../../assets/member.json';
 import department from '../../assets/department.json';
@@ -32,20 +32,5 @@ export class ShareDataService {
 
   setBranch(branch: any) {
     this.branch.next(branch);
-  }
-
-  requestMember() {
-    // let header = new HttpHeaders({
-    //   'Content-Type': 'application/json; charset=utf-8',
-    // });
-
-    // this.http.get<any>('http://localhost:3000/member').subscribe(
-    //   (response) => {
-    //     console.log(response);
-    //   }, (error) => {
-    //     console.log(error);
-    //   }
-
-    // )
   }
 }

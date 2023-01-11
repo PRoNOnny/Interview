@@ -1,0 +1,4 @@
+{
+    "mangoURL": "mongodb+srv://prononny:prononny123@cluster0.rbdh1wk.mongodb.net/?retryWrites=true&w=majority",
+    "baseUrl": "http://localhost:3000"
+}

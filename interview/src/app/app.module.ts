@@ -14,6 +14,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import {MatMenuModule} from '@angular/material/menu';
+import {ClipboardModule} from '@angular/cdk/clipboard';
 
 import { BackendService } from './service/backend.service';
 import { FrontendService } from './service/frontend.service';
@@ -31,10 +32,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MemberdialogComponent } from './member/memberdialog/memberdialog.component';
 import { DepartmentComponent } from './setting/department/department.component';
 import { BranchComponent } from './setting/branch/branch.component';
-import { LoginComponent } from './login/login.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     ToolbarComponent,
     MemberComponent,
@@ -46,8 +47,8 @@ import { LoginComponent } from './login/login.component';
     BranchComponent,
     OnlyNumberDirective,
     SearchPipe,
-    LoginComponent
-  ],
+    ScheduleComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -64,7 +65,8 @@ import { LoginComponent } from './login/login.component';
     MatExpansionModule,
     MatCheckboxModule,
     DragDropModule,
-    MatMenuModule
+    MatMenuModule,
+    ClipboardModule
   ],
   providers: [
     BackendService,

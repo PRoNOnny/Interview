@@ -75,8 +75,7 @@
               "browserTarget": "office:build:production"
             },
             "development": {
-              "browserTarget": "office:build:development",
-              "proxyConfig": "src/proxy.conf.json" 
+              "browserTarget": "office:build:development"
             }
           },
           "defaultConfiguration": "development"
