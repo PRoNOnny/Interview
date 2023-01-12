@@ -14,7 +14,7 @@
             
             <div *ngIf="value" fxFlex="60" fxLayoutAlign="center start" fxLayoutGap="5px">
                 <span style="line-height: 26px;">Your short-url is</span>
-                <input class="input" disabled [(ngModel)]="value">
+                <input style="width: 12vw;" class="input" disabled [(ngModel)]="value">
                 <span [cdkCopyToClipboard]="value" class="material-icons copy-icons">content_copy</span>
             </div>
         </div>

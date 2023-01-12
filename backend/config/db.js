@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 const config = require('config');
 const db = config.get('mangoURL');
-
 mongoose.set('strictQuery', false);
 
 const connectDB = async () => {
@@ -17,3 +16,11 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB
+
+module.exports.addNewData = async (data, callback) => {
+    data.save().then((result) => {
+        callback(result);
+    }).catch((err) => {
+        callback('false')
+    })
+}

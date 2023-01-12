@@ -1,17 +1,17 @@
 [
     {
         "id": "785127",
-        "department": "เวร เครือข่าย",
+        "department": "finance",
         "type": "single"
     },
     {
         "id": "967134",
-        "department": "เวร อุปกรณ์และแม่ข่าย",
+        "department": "cashier",
         "type":"single"
     },
     {
         "id": "123057",
-        "department": "หน.ชุดเวร และเจ้าหน้าที่เวร สนญ.",
+        "department": "developer",
         "type": "multi"
     }
 ]
